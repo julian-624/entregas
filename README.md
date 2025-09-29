@@ -1,4 +1,4 @@
-Ryuu_Fit
+# Ryuu_Fit
 
 Se trata de una aplicación móvil diseñada para ofrecer planes personalizados de entrenamiento y
 alimentación a cada usuario. El proceso comienza con un breve cuestionario en el que se solicitan
@@ -10,7 +10,8 @@ de manera clara y sencilla, lo que convierte a la aplicación en una herramienta
 mantener hábitos saludables desde casa o cualquier lugar, sin necesidad de contar con equipos
 especializados.
 
-Author: Julian Fernando perdomo
+### Author: Julian Fernando perdomo
+### Co-Authores: Osman Pajaro, Johan Ricaurte
 
 ## Referencias
 

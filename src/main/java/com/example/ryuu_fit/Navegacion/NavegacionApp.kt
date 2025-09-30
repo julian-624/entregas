@@ -1,0 +1,38 @@
+package com.example.ryuu_fit.Navegacion
+
+
+import androidx.compose.runtime.Composable
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.ui.Modifier
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.rememberNavController
+import com.example.ryuu_fit.pantallas.LoginScreen
+import com.example.ryuu_fit.pantallas.TestInicialScreen
+import com.example.ryuu_fit.pantallas.HomeScreen
+
+
+
+
+
+@Composable
+fun NavegacionApp() {
+    val navController = rememberNavController()
+    NavHost(
+        navController = navController,
+        startDestination = AppPantallas.Login.ruta
+    )
+    {
+        composable(route = AppPantallas.Login.ruta) {
+            LoginScreen(navController)
+        }
+        composable(route = AppPantallas.Home.ruta) {
+            HomeScreen(navController)
+        }
+        composable(route = AppPantallas.Test.ruta) {
+            TestInicialScreen(navController)
+        }
+    }
+
+}

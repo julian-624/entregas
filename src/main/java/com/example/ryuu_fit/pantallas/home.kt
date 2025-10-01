@@ -23,7 +23,7 @@ import com.example.ryuu_fit.R
 @Composable
 fun HomeScreen(
     navController: NavController,
-    onNavigate: () -> Unit = {} // callback para ir a la Parte 3
+
 ) {
     Scaffold(
         bottomBar = {
@@ -114,7 +114,7 @@ fun HomeScreen(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceEvenly
             ) {
-                FilterChip("Avances", onClick = onNavigate)
+                FilterChip("Avances")
                 FilterChip("Rutinas")
                 FilterChip("Nutrición")
             }

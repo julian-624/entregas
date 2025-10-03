@@ -21,6 +21,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.ryuu_fit.R
 
+
 class MenuActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,7 +29,7 @@ class MenuActivity : ComponentActivity() {
             MenuScreen(
                 onRutinaClick = {
                     // Navegar a RutinaActivity
-                    startActivity(android.content.Intent(this, RutinaActivity::class.java))
+                    startActivity(android.content.Intent(this,  RutinaActivity::class.java))
                 },
                 onPlanClick = {
                     // Navegar a PlanAlimenticioActivity

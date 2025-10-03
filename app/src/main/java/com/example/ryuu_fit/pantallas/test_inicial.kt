@@ -13,51 +13,16 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.ryuu_fit.R
 
-
-// MODELO DE PREGUNTA
-
-data class Pregunta(
-    val label: String,
-    val opciones: List<String>
-)
-
-
-// LISTA DE PREGUNTAS
-
-val preguntasParte1 = listOf(
-    Pregunta("Edad", (15..100).map { "$it años" }),
-    Pregunta("Altura (Cm)", (100..200).map { "$it cm" }),
-    Pregunta("Peso (Kg)", (30..200).map { "$it kg" }),
-    Pregunta("Género", listOf("Masculino", "Femenino", "Otro")),
-    Pregunta("Complexión corporal", listOf("Delgada", "Media", "Musculosa", "Robusta")),
-    Pregunta("Frecuencia de actividad física", listOf("Nunca", "1-2 veces/semana", "3-5 veces/semana", "Diario")),
-    Pregunta("Nivel de condición física", listOf("Bajo", "Medio", "Alto")),
-    Pregunta("Objetivo principal", listOf("Bajar de peso", "Ganar masa muscular", "Mantenerme en forma", "Otro")),
-    Pregunta("Qué tiempo diario entrenarías", listOf("15 min", "30 min", "45 min", "1h", "Más de 1h")),
-    Pregunta("Cuántos días a la semana entrenarías", (1..7).map { "$it días" }),
-    Pregunta("Tienes restricciones alimenticias", listOf("Ninguna", "Vegetariano", "Vegano", "Sin gluten", "Otra")),
-    Pregunta("Frecuencia consumo de comidas rápidas", listOf("Nunca", "1 vez/semana", "2-3 veces/semana", "Más de 3 veces/semana"))
-)
-
-val preguntasParte2 = listOf(
-    Pregunta("Cuántas horas sueles dormir", (4..12).map { "$it horas" }),
-    Pregunta("Qué te motiva a entrenar", listOf("Salud", "Estética", "Rendimiento deportivo", "Otro")),
-    Pregunta("Peso (Kg)", (30..200).map { "$it kg" }),
-    Pregunta("Quieres recibir notificaciones", listOf("Sí", "No"))
-)
-
-
-// PANTALLA PRINCIPAL
-
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun TestInicialScreen(navController: NavController) {
-    var parte by remember { mutableStateOf(1) }
+    var parte by remember { mutableStateOf(1) } // estado: parte 1 o parte 2
 
     Scaffold(
         topBar = {
@@ -66,9 +31,9 @@ fun TestInicialScreen(navController: NavController) {
                     Text("Test Inicial", color = Color.White, fontWeight = FontWeight.Bold)
                 },
                 navigationIcon = {
-                    IconButton(onClick = { navController.popBackStack() }) {
+                    IconButton(onClick = { /* TODO: volver atrás */ }) {
                         Icon(
-                            painter = painterResource(R.drawable.ic_backarrow), // cambia por tu ícono de atrás
+                            painter = painterResource(R.drawable.ic_google), // cambia por tu ícono real
                             contentDescription = "Volver",
                             tint = Color.White
                         )
@@ -83,12 +48,7 @@ fun TestInicialScreen(navController: NavController) {
         bottomBar = {
             Button(
                 onClick = {
-                    if (parte == 1) {
-                        parte = 2
-                    } else {
-                        // Aquí para navegar a otra pantalla
-                        navController.navigate("home")
-                    }
+                    if (parte == 1) parte = 2 else {/* TODO: finalizar */}
                 },
                 colors = ButtonDefaults.buttonColors(containerColor = Color.White),
                 modifier = Modifier
@@ -113,18 +73,28 @@ fun TestInicialScreen(navController: NavController) {
                 .padding(16.dp)
         ) {
             if (parte == 1) {
-                preguntasParte1.forEach { pregunta ->
-                    DropdownField(pregunta.label, pregunta.opciones)
-                }
+                DropdownField("Edad")
+                DropdownField("Altura (Cm)")
+                DropdownField("Peso (Kg)")
+                DropdownField("Género")
+                DropdownField("Complexión corporal")
+                DropdownField("Frecuencia de actividad física")
+                DropdownField("Nivel de condición física")
+                DropdownField("Objetivo principal")
+                DropdownField("Qué tiempo diario entrenarías")
+                DropdownField("Cuántos días a la semana entrenarías")
+                DropdownField("Tienes restricciones alimenticias")
+                DropdownField("Frecuencia consumo de comidas rápidas")
             } else {
-                preguntasParte2.forEach { pregunta ->
-                    DropdownField(pregunta.label, pregunta.opciones)
-                }
+                DropdownField("Cuántas horas sueles dormir")
+                DropdownField("Qué te motiva a entrenar")
+                DropdownField("Peso (Kg)")
+                DropdownField("Quieres recibir notificaciones")
 
                 Spacer(modifier = Modifier.height(24.dp))
 
                 Image(
-                    painter = painterResource(id = R.drawable.ryuu_fit_image_bgrm),
+                    painter = painterResource(id = R.drawable.ryuu_fit_image),
                     contentDescription = "Logo",
                     modifier = Modifier
                         .fillMaxWidth()
@@ -144,13 +114,12 @@ fun TestInicialScreen(navController: NavController) {
         }
     }
 }
-
-// COMPONENTE DROPDOWN
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun DropdownField(label: String, options: List<String>) {
+fun DropdownField(label: String) {
     var expanded by remember { mutableStateOf(false) }
     var selectedText by remember { mutableStateOf("seleccione el rango") }
+    val options = listOf("Opción 1", "Opción 2", "Opción 3")
 
     ExposedDropdownMenuBox(
         expanded = expanded,
@@ -164,8 +133,9 @@ fun DropdownField(label: String, options: List<String>) {
             onValueChange = {},
             readOnly = true,
             label = { Text(label, color = Color.White) },
-            trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(expanded = expanded) },
-            modifier = Modifier.menuAnchor().fillMaxWidth(),
+            trailingIcon = {
+                ExposedDropdownMenuDefaults.TrailingIcon(expanded = expanded)
+            },
             colors = TextFieldDefaults.colors(
                 focusedTextColor = Color.White,
                 unfocusedTextColor = Color.White,
@@ -177,7 +147,10 @@ fun DropdownField(label: String, options: List<String>) {
                 focusedIndicatorColor = Color.White,
                 unfocusedIndicatorColor = Color.Gray,
                 disabledIndicatorColor = Color.DarkGray
-            )
+            ),
+            modifier = Modifier
+                .menuAnchor()
+                .fillMaxWidth()
         )
 
         ExposedDropdownMenu(
@@ -196,3 +169,6 @@ fun DropdownField(label: String, options: List<String>) {
         }
     }
 }
+
+
+

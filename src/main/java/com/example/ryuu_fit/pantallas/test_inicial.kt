@@ -68,7 +68,7 @@ fun TestInicialScreen(navController: NavController) {
                 navigationIcon = {
                     IconButton(onClick = { navController.popBackStack() }) {
                         Icon(
-                            painter = painterResource(R.drawable.ic_google), // cambia por tu ícono de atrás
+                            painter = painterResource(R.drawable.ic_backarrow), // cambia por tu ícono de atrás
                             contentDescription = "Volver",
                             tint = Color.White
                         )
@@ -124,7 +124,7 @@ fun TestInicialScreen(navController: NavController) {
                 Spacer(modifier = Modifier.height(24.dp))
 
                 Image(
-                    painter = painterResource(id = R.drawable.ryuu_fit_image),
+                    painter = painterResource(id = R.drawable.ryuu_fit_image_bgrm),
                     contentDescription = "Logo",
                     modifier = Modifier
                         .fillMaxWidth()

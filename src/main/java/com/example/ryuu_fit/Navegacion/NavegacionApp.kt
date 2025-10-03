@@ -11,9 +11,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.ryuu_fit.pantallas.LoginScreen
 import com.example.ryuu_fit.pantallas.TestInicialScreen
 import com.example.ryuu_fit.pantallas.HomeScreen
-
-
-
+//import com.example.ryuu_fit.pantallas.(nombre de la funcion)
 
 
 @Composable

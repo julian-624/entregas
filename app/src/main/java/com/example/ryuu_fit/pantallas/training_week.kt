@@ -16,7 +16,6 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.ryuu_fit.Navegacion.AppPantallas
@@ -113,7 +112,7 @@ fun trainingWeek(navController: NavController) {
             Spacer(modifier = Modifier.height(24.dp))
 
             Image(
-                painter = painterResource(id = R.drawable.ryuu_fit_image),
+                painter = painterResource(id = R.drawable.ryuu_fit_image_bgrm),
                 contentDescription = "Logo Ryuu-Fit",
                 modifier = Modifier
                     .fillMaxWidth(0.6f)

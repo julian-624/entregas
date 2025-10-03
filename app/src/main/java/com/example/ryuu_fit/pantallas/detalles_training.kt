@@ -110,7 +110,7 @@ fun detallesTraining(
                     verticalAlignment = Alignment.CenterVertically
                 ) {
                     Image(
-                        painter = painterResource(id = R.drawable.ryuu_fit_image),
+                        painter = painterResource(id = R.drawable.ryuu_fit_image_bgrm),
                         contentDescription = "Logo Ryuu-Fit",
                         modifier = Modifier
                             .size(100.dp)

@@ -124,7 +124,7 @@ fun TestInicialScreen(navController: NavController) {
                 Spacer(modifier = Modifier.height(24.dp))
 
                 Image(
-                    painter = painterResource(id = R.drawable.ryuu_fit_image),
+                    painter = painterResource(id = R.drawable.ryuu_fit_image_bgrm),
                     contentDescription = "Logo",
                     modifier = Modifier
                         .fillMaxWidth()

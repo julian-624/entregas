@@ -60,7 +60,7 @@ fun LoginScreen(
         Spacer(modifier = Modifier.height(40.dp))
 
         Image(
-            painter = painterResource(id = R.drawable.ryuu_fit_image),
+            painter = painterResource(id = R.drawable.ryuu_fit_image_bgrm),
             contentDescription = "Ryuu-Fit Logo",
             modifier = Modifier.size(150.dp)
         )

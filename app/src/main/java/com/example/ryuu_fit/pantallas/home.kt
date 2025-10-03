@@ -110,7 +110,7 @@ fun HomeScreen(
                 placeholder = { Text("Buscar", color = Color.Gray) },
                 leadingIcon = {
                     Image(
-                        painter = painterResource(R.drawable.ryuu_fit_image),
+                        painter = painterResource(R.drawable.ryuu_fit_image_bgrm),
                         contentDescription = "Buscar",
                         modifier = Modifier.size(24.dp)
                     )
@@ -139,7 +139,7 @@ fun HomeScreen(
 
             // Logo
             Image(
-                painter = painterResource(id = R.drawable.ryuu_fit_image),
+                painter = painterResource(id = R.drawable.ryuu_fit_image_bgrm),
                 contentDescription = "Logo",
                 modifier = Modifier.size(180.dp)
             )

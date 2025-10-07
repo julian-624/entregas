@@ -1,4 +1,4 @@
-package com.example.ryuu_fit
+/*package com.example.ryuu_fit
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -6,7 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.runtime.*
 import androidx.compose.ui.tooling.preview.Preview
-//import com.example.ryuu_fit.Navegacion.NavegacionApp
+import com.example.ryuu_fit.Navegacion.NavegacionApp
 import com.example.ryuu_fit.ui.theme.RYUU_FITTheme
 import com.example.ryuu_fit.pantallas.LoginScreen
 import com.example.ryuu_fit.pantallas.TestInicialScreen
@@ -27,7 +27,6 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-/*-
 @Composable
 
 fun AppNavigation() {
@@ -47,7 +46,6 @@ fun AppNavigation() {
         )
     }
 }
-*/
 @Preview(showBackground = true)
 @Composable
 fun AppPreview() {
@@ -56,3 +54,4 @@ fun AppPreview() {
         LoginScreen()
     }
 }
+*/

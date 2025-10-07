@@ -1,5 +1,5 @@
 package com.example.ryuu_fit
-
+/*
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -34,3 +34,4 @@ fun AppPreview() {
         NavegacionApp()
     }
 }
+*/

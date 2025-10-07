@@ -23,7 +23,7 @@ import com.example.ryuu_fit.R
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun LoginScreen(
-    //navController: NavController,
+    navController: NavController,
     onLoginSuccess: () -> Unit = {},   // Navegar a Home
     onRegisterClick: () -> Unit = {}   // Navegar a TestInicial
 ) {

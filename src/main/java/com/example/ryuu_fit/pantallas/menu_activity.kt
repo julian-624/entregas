@@ -21,7 +21,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.ryuu_fit.R
 
-
 class MenuActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,7 +28,7 @@ class MenuActivity : ComponentActivity() {
             MenuScreen(
                 onRutinaClick = {
                     // Navegar a RutinaActivity
-                    startActivity(android.content.Intent(this,  RutinaActivity::class.java))
+                    startActivity(android.content.Intent(this, RutinaActivity::class.java))
                 },
                 onPlanClick = {
                     // Navegar a PlanAlimenticioActivity
@@ -100,7 +99,7 @@ fun MenuScreen(
                 ) {
                     // Imagen de fondo para Rutina semanal
                     Image(
-                        painter = painterResource(id = R.drawable.ejercicio_casa),
+                        painter = painterResource(id = R.drawable.ic_launcher_foreground), //ejercicio_casa
                         contentDescription = "Rutina semanal",
                         modifier = Modifier.fillMaxSize()
                     )
@@ -134,7 +133,7 @@ fun MenuScreen(
                 ) {
                     // Imagen de fondo para Plan alimenticio
                     Image(
-                        painter = painterResource(id = R.drawable.alimentacion_balanceada),
+                        painter = painterResource(id = R.drawable.ic_launcher_foreground), //alimentacion_balanceada
                         contentDescription = "Plan alimenticio",
                         modifier = Modifier.fillMaxSize()
                     )

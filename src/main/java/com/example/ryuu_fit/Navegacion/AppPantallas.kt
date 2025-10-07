@@ -12,4 +12,11 @@ sealed class AppPantallas(val ruta: String) {
     object DetallesEx: AppPantallas("detallesEx")
 
     object TrainingWeek: AppPantallas("trainingWeek")
+
+    //Julian Pantallas
+    object Rutina : AppPantallas("rutina")
+
+    object Menu : AppPantallas("menu")
+
+
 }

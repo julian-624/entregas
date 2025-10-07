@@ -17,6 +17,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import com.example.ryuu_fit.Navegacion.AppPantallas
 import com.example.ryuu_fit.R
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -30,7 +31,8 @@ fun HomeScreen(
             NavigationBar(containerColor = Color.White) {
                 NavigationBarItem(
                     selected = true,
-                    onClick = { },
+                    onClick = { navController.navigate(AppPantallas.Rutina.ruta)
+                    },
                     icon = {
                         Image(
                             painter = painterResource(id = R.drawable.ic_home), // ic_home
@@ -123,6 +125,7 @@ fun HomeScreen(
 
             // Logo
             Image(
+
                 painter = painterResource(id = R.drawable.ryuu_fit_image_bgrm),
                 contentDescription = "Logo",
                 modifier = Modifier.size(180.dp)
@@ -150,6 +153,7 @@ fun HomeScreen(
             ) {
                 OptionCard(R.drawable.ic_actuinfo, "Actualización de información")
                 OptionCard(R.drawable.ic_opcidietas, "Opciones de dietas")
+                Button(onClick = {navController.navigate(AppPantallas.Menu.ruta)}) { }
             }
         }
     }

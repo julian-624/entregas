@@ -1,8 +1,5 @@
 package com.example.ryuu_fit.pantallas
 
-import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -19,32 +16,13 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import com.example.ryuu_fit.Navegacion.AppPantallas
 import com.example.ryuu_fit.R
-
-class MenuActivity : ComponentActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContent {
-            MenuScreen(
-                onRutinaClick = {
-                    // Navegar a RutinaActivity
-                    startActivity(android.content.Intent(this, RutinaActivity::class.java))
-                },
-                onPlanClick = {
-                    // Navegar a PlanAlimenticioActivity
-                    startActivity(android.content.Intent(this, RutinaActivity::class.java))
-                }
-            )
-        }
-    }
-}
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun MenuScreen(
-    onRutinaClick: () -> Unit,
-    onPlanClick: () -> Unit
-) {
+fun MenuScreen(navController: NavController) {
     Surface(
         modifier = Modifier.fillMaxSize(),
         color = Color.Black
@@ -56,7 +34,7 @@ fun MenuScreen(
                 .padding(16.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            // Logo de la app
+            // Logo
             Image(
                 painter = painterResource(id = R.drawable.ryuu_fit_image),
                 contentDescription = "Logo Ryuu Fit",
@@ -78,16 +56,16 @@ fun MenuScreen(
             // Datos del usuario
             UserDataCard("Peso Actual - 54 Kg   Peso Deseado 63 Kg")
             Spacer(modifier = Modifier.height(8.dp))
-
             UserDataCard("Días semanales para ejercitarse: L M M J V S")
             Spacer(modifier = Modifier.height(8.dp))
-
             UserDataCard("Horas diarias para realizar ejercicio: 2-3")
             Spacer(modifier = Modifier.height(32.dp))
 
-            // Botón Rutina semanal con imagen
+            // Botón Rutina semanal
             Card(
-                onClick = onRutinaClick,
+                onClick = {
+                    navController.navigate(AppPantallas.Rutina.ruta)
+                },
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(200.dp),
@@ -97,9 +75,8 @@ fun MenuScreen(
                     modifier = Modifier.fillMaxSize(),
                     contentAlignment = Alignment.BottomCenter
                 ) {
-                    // Imagen de fondo para Rutina semanal
                     Image(
-                        painter = painterResource(id = R.drawable.ic_launcher_foreground), //ejercicio_casa
+                        painter = painterResource(id = R.drawable.ic_launcher_foreground),
                         contentDescription = "Rutina semanal",
                         modifier = Modifier.fillMaxSize()
                     )
@@ -119,9 +96,12 @@ fun MenuScreen(
 
             Spacer(modifier = Modifier.height(16.dp))
 
-            // Botón Plan alimenticio con imagen
+            // Botón Plan alimenticio
             Card(
-                onClick = onPlanClick,
+                onClick = {
+                    // 🔹 Cuando crees la pantalla de Plan Alimenticio, la enlazaremos aquí
+                    // navController.navigate(AppPantallas.PlanAlimenticio.ruta)
+                },
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(200.dp),
@@ -131,9 +111,8 @@ fun MenuScreen(
                     modifier = Modifier.fillMaxSize(),
                     contentAlignment = Alignment.BottomCenter
                 ) {
-                    // Imagen de fondo para Plan alimenticio
                     Image(
-                        painter = painterResource(id = R.drawable.ic_launcher_foreground), //alimentacion_balanceada
+                        painter = painterResource(id = R.drawable.ic_launcher_foreground),
                         contentDescription = "Plan alimenticio",
                         modifier = Modifier.fillMaxSize()
                     )
@@ -173,8 +152,10 @@ fun UserDataCard(text: String) {
 @Preview(showBackground = true)
 @Composable
 fun MenuScreenPreview() {
-    MenuScreen(
-        onRutinaClick = { },
-        onPlanClick = { }
-    )
+    // Vista previa sin NavController
+    Surface(color = Color.Black) {
+        Column {
+            UserDataCard("Vista previa")
+        }
+    }
 }

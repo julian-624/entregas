@@ -54,7 +54,7 @@ fun HomeScreen(
                 )
                 NavigationBarItem(
                     selected = false,
-                    onClick = { },
+                    onClick = { navController.navigate("detallesEx")},
                     icon = {
                         Image(
                             painter = painterResource(id = R.drawable.ic_notificaciones),//ic_notificaciones
@@ -66,7 +66,7 @@ fun HomeScreen(
                 )
                 NavigationBarItem(
                     selected = false,
-                    onClick = { },
+                    onClick = { navController.navigate("trainingWeek") },
                     icon = {
                         Image(
                             painter = painterResource(id = R.drawable.ic_perfil), //ic_perfil
@@ -135,7 +135,7 @@ fun HomeScreen(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceEvenly
             ) {
-                CategoryIcon(R.drawable.ic_cardio, "Cardio")
+                CategoryIcon(R.drawable.ic_cardio, "Cardio",)
                 CategoryIcon(R.drawable.ic_fuerza, "Fuerza")
                 CategoryIcon(R.drawable.ic_resistencia, "Resistencia")
                 CategoryIcon(R.drawable.ic_elasticidad, "Elasticidad")

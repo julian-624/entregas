@@ -5,8 +5,8 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowBack
+//import androidx.compose.material.icons.Icons
+//import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -40,7 +40,7 @@ fun trainingWeek(navController: NavController) {
                 navigationIcon = {
                     IconButton(onClick = { navController?.popBackStack() }) {
                         Icon(
-                            imageVector = Icons.Default.ArrowBack,
+                            painter = painterResource(R.drawable.ic_backarrow),
                             contentDescription = "Volver atrás",
                             tint = Color.Black
                         )

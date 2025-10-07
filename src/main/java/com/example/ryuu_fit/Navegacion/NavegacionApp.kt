@@ -12,9 +12,9 @@ import com.example.ryuu_fit.pantallas.LoginScreen
 import com.example.ryuu_fit.pantallas.TestInicialScreen
 import com.example.ryuu_fit.pantallas.HomeScreen
 
-//import com.example.ryuu_fit.pantallas.detallesEjercicio
+import com.example.ryuu_fit.pantallas.detallesEjercicio
 import com.example.ryuu_fit.pantallas.detallesTraining
-//import com.example.ryuu_fit.pantallas.trainingWeek
+import com.example.ryuu_fit.pantallas.trainingWeek
 //import com.example.ryuu_fit.pantallas.(nombre de la funcion)
 
 
@@ -41,6 +41,13 @@ fun NavegacionApp() {
             detallesTraining(navController)
         }
 
+        composable(route = AppPantallas.DetallesEx.ruta) {
+            detallesEjercicio(navController)
+        }
+
+        composable(route = AppPantallas.TrainingWeek.ruta) {
+            trainingWeek(navController)
+        }
 
     }
 

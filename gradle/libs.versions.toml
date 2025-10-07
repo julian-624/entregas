@@ -34,7 +34,6 @@ androidx-runtime = { group = "androidx.compose.runtime", name = "runtime", versi
 androidx-ui-text = { group = "androidx.compose.ui", name = "ui-text", version.ref = "uiText" }
 material3 = { group = "androidx.compose.material3", name = "material3", version.ref = "material3" }
 androidx-navigation-runtime-ktx = { group = "androidx.navigation", name = "navigation-runtime-ktx", version.ref = "navigationRuntimeKtx" }
-materialIconsExtended = { group = "androidx.compose.material", name = "material-icons-extended", version = "1.6.8" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
